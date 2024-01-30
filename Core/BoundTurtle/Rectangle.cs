@@ -5,12 +5,13 @@ public record Rectangle
     private readonly Point _bottomLeft;
     private readonly Point _topRight;
 
-    public Rectangle(Point bottomLeft, Point topRight)
+    public Rectangle(Point alpha, Point bravo)
     {
-        _bottomLeft = bottomLeft;
-        _topRight = topRight;
-        if (bottomLeft.X == topRight.X || bottomLeft.Y == topRight.Y)
+        if (alpha.X == bravo.X || alpha.Y == bravo.Y)
             throw new Exception("A rectangle needs two dimensions");
+
+        _bottomLeft = new Point(Math.Min(alpha.X, bravo.X), Math.Min(alpha.Y, bravo.Y));
+        _topRight = new Point(Math.Max(alpha.X, bravo.X), Math.Max(alpha.Y, bravo.Y));
     }
 
     public bool Contains(Point point)
