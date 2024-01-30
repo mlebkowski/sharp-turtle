@@ -1,18 +1,15 @@
 namespace Core.State;
 
-public readonly struct Point(int x, int y)
+public record Point(int X, int Y)
 {
-    public readonly int X = x;
-    public readonly int Y = y;
-
     public static Point Start()
     {
-        return new Point(x: 0, y: 0);
+        return new Point(X: 0, Y: 0);
     }
     
     public Point Add(Point other)
     {
-        return new Point(x: X + other.X, y: Y + other.Y);
+        return new Point(X: X + other.X, Y: Y + other.Y);
     }
 
     public override string ToString()

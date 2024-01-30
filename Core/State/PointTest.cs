@@ -13,5 +13,10 @@ public class PointTest
             new Point(1, 2).Add(new Point(2, 3)),
             Is.EqualTo(new Point(3, 5))
         );
+
+        Assert.That(
+            Point.Start().Add(new Point(2, -3)),
+            Is.EqualTo(new Point(2, -3))
+        );
     }
 }
