@@ -5,12 +5,12 @@ namespace Core.Stateful;
 public class StatefulTurtle(ITurtle turtle)
 {
     public State.State State { get; private set; } = Core.State.State.Initial();
-    
+
     public static StatefulTurtle Create()
     {
         return new StatefulTurtle(new LogicTurtle());
     }
-    
+
     public void PenUp()
     {
         State = turtle.PenUp(State);

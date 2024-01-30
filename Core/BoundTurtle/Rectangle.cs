@@ -2,18 +2,16 @@ namespace Core.BoundTurtle;
 
 public record Rectangle
 {
+    private readonly Point _bottomLeft;
+    private readonly Point _topRight;
+
     public Rectangle(Point bottomLeft, Point topRight)
     {
         _bottomLeft = bottomLeft;
         _topRight = topRight;
         if (bottomLeft.X == topRight.X || bottomLeft.Y == topRight.Y)
-        {
             throw new Exception("A rectangle needs two dimensions");
-        }
     }
-
-    private readonly Point _bottomLeft;
-    private readonly Point _topRight;
 
     public bool Contains(Point point)
     {

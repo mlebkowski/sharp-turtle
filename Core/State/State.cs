@@ -6,4 +6,4 @@ public record State(Pen Pen, Angle Angle, Point Position)
     {
         return new State(Pen.Down, Angle.Start(), Point.Start());
     }
-};
+}

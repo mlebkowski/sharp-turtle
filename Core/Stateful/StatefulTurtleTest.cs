@@ -7,8 +7,14 @@ namespace Core.Stateful;
 [TestOf(typeof(StatefulTurtle))]
 public class StatefulTurtleTest
 {
+    [SetUp]
+    public void SetUp()
+    {
+        _scenario = new StatefulTurtleScenario();
+    }
+
     private StatefulTurtleScenario _scenario;
-    
+
     [Test]
     public void Angles()
     {
@@ -25,7 +31,4 @@ public class StatefulTurtleTest
             .AndMovesForward(100)
             .ThenThePositionIs(new Point(0, 100));
     }
-
-    [SetUp]
-    public void SetUp() => _scenario = new StatefulTurtleScenario();
 }

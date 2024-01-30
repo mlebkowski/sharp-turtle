@@ -4,8 +4,8 @@ namespace Core.Logger;
 
 public class LoggingTurtleScenario
 {
-    private readonly State.State _state = State.State.Initial();
     private readonly LoggerSpy _logger = new();
+    private readonly State.State _state = State.State.Initial();
     private readonly TurtleSpy _turtle = new();
 
     public LoggingTurtleScenario WhenTurtleTurnsLeft(int degrees)

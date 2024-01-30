@@ -6,13 +6,12 @@ namespace Core.State;
 [TestOf(typeof(Angle))]
 public class AngleTest
 {
-
     [TestCaseSource(nameof(DataProvider))]
     public void Creating(int input, int expected)
     {
         Assert.That(new Angle(input).Degrees, Is.EqualTo(expected));
     }
-    
+
     [Test]
     public void Adding()
     {
@@ -34,5 +33,4 @@ public class AngleTest
         new object[] { 720, 0 },
         new object[] { 730, 10 }
     ];
-
 }

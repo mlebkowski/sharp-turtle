@@ -7,13 +7,13 @@ namespace Core.Logic;
 public class LogicTurtleScenario
 {
     private State.State _state = Initial();
-    
+
     public LogicTurtleScenario GivenTurtleIsFacing(int angle)
     {
         _state = _state with { Angle = new Angle(angle) };
         return this;
     }
-    
+
     public LogicTurtleScenario WhenItMovesForward(int distance)
     {
         var sut = new LogicTurtle();

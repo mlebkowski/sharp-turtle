@@ -1,6 +1,6 @@
 namespace Core.BoundTurtle;
 
-public class BoundTurtle(ITurtle innerTurtle, Rectangle boundingBox): ITurtle
+public class BoundTurtle(ITurtle innerTurtle, Rectangle boundingBox) : ITurtle
 {
     public State.State PenUp(State.State state)
     {

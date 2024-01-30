@@ -5,8 +5,8 @@ namespace Core.BoundTurtle;
 
 public class BoundTurtleScenario
 {
-    private Rectangle _boundingBox = new Rectangle(new Point(0, 0), new Point(1, 1));
     private State.State? _actual;
+    private Rectangle _boundingBox = new(new Point(0, 0), new Point(1, 1));
     private Exception? _exception;
 
     public BoundTurtleScenario GivenBoundingBox(Rectangle boundingBox)
@@ -18,17 +18,20 @@ public class BoundTurtleScenario
     public BoundTurtleScenario WhenTurtleMoves(int distance)
     {
         var sut = new BoundTurtle(new LogicTurtle(), _boundingBox);
-        try {
+        try
+        {
             _exception = null;
             _actual = sut.MoveForward(State.State.Initial(), distance);
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             _exception = e;
             _actual = null;
         }
+
         return this;
     }
-    
+
     public BoundTurtleScenario ThenThePositionIs(State.Point expected)
     {
         Assert.That(_actual, Is.Not.Null);

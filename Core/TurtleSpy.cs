@@ -1,9 +1,9 @@
 namespace Core;
 
-public class TurtleSpy: ITurtle
+public class TurtleSpy : ITurtle
 {
     public readonly Stack<string> Calls = [];
-    
+
     public State.State PenUp(State.State state)
     {
         Calls.Push($"{nameof(ITurtle.PenUp)}");

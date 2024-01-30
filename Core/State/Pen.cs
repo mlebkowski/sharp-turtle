@@ -1,21 +1,20 @@
-namespace Core.State
+namespace Core.State;
+
+public static class Extensions
 {
-    public static class Extensions
+    public static bool IsUp(this Pen pen)
     {
-        public static bool IsUp(this Pen pen)
-        {
-            return pen == Pen.Up;
-        }
-
-        public static bool IsDown(this Pen pen)
-        {
-            return pen == Pen.Down;
-        }
+        return pen == Pen.Up;
     }
 
-    public enum Pen
+    public static bool IsDown(this Pen pen)
     {
-        Up,
-        Down,
+        return pen == Pen.Down;
     }
+}
+
+public enum Pen
+{
+    Up,
+    Down
 }

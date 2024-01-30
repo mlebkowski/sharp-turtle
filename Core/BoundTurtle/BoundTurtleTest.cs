@@ -1,4 +1,3 @@
-using Core.BoundTurtle;
 using NUnit.Framework;
 
 namespace Core.BoundTurtle;
@@ -7,6 +6,12 @@ namespace Core.BoundTurtle;
 [TestOf(typeof(BoundTurtle))]
 public class BoundTurtleTest
 {
+    [SetUp]
+    public void SetUp()
+    {
+        _scenario = new BoundTurtleScenario();
+    }
+
     private BoundTurtleScenario _scenario;
 
     [Test]
@@ -14,8 +19,8 @@ public class BoundTurtleTest
     {
         _scenario
             .GivenBoundingBox(new Rectangle(new Point(-50, -50), new Point(50, 50)))
-            .WhenTurtleMoves(distance: 30)
-            .ThenThePositionIs(new State.Point(X: 30, Y: 0));
+            .WhenTurtleMoves(30)
+            .ThenThePositionIs(new State.Point(30, 0));
     }
 
     [Test]
@@ -23,10 +28,7 @@ public class BoundTurtleTest
     {
         _scenario
             .GivenBoundingBox(new Rectangle(new Point(-50, -50), new Point(50, 50)))
-            .WhenTurtleMoves(distance: 100)
+            .WhenTurtleMoves(100)
             .ThenOutOfBoundsExceptionIsExpected("Moved to 100×0 outside of Rectangle<-50×-50, 50×50>");
     }
-
-    [SetUp]
-    public void SetUp() => _scenario = new BoundTurtleScenario();
 }

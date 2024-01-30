@@ -6,6 +6,12 @@ namespace Core.Logger;
 [TestOf(typeof(LoggingTurtle))]
 public class LoggingTurtleTest
 {
+    [SetUp]
+    public void SetUp()
+    {
+        _scenario = new LoggingTurtleScenario();
+    }
+
     private LoggingTurtleScenario _scenario;
 
     [Test]
@@ -16,7 +22,7 @@ public class LoggingTurtleTest
             .ThenMessageIsLogged("[0×0] Turn left by 90 degrees")
             .AndTurtleReceivedInstruction("TurnLeft 90");
     }
- 
+
     [Test]
     public void TurtleTurnsRight()
     {
@@ -25,7 +31,7 @@ public class LoggingTurtleTest
             .ThenMessageIsLogged("[0×0] Turn right by 60 degrees")
             .AndTurtleReceivedInstruction("TurnRight 60");
     }
- 
+
     [Test]
     public void TurtleMovesForward()
     {
@@ -34,7 +40,4 @@ public class LoggingTurtleTest
             .ThenMessageIsLogged("[0×0] Move forward by 10 units at an angle 0 degrees")
             .AndTurtleReceivedInstruction("MoveForward 10");
     }
-    
-    [SetUp]
-    public void SetUp() => _scenario = new LoggingTurtleScenario();
 }

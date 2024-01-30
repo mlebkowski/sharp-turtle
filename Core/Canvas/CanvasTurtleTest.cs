@@ -1,4 +1,3 @@
-using Core.Canvas;
 using NUnit.Framework;
 
 namespace Core.Canvas;
@@ -7,7 +6,6 @@ namespace Core.Canvas;
 [TestOf(typeof(CanvasTurtle))]
 public class CanvasTurtleTest
 {
-
     [Test]
     public void Test()
     {

@@ -6,20 +6,14 @@ public class LoggingTurtle(ITurtle innerTurtle, ILogger logger) : ITurtle
 {
     public State.State PenUp(State.State state)
     {
-        if (state.Pen.IsDown())
-        {
-            logger.Write($"[{state.Position}] Pen up");
-        }
+        if (state.Pen.IsDown()) logger.Write($"[{state.Position}] Pen up");
 
         return innerTurtle.PenUp(state);
     }
 
     public State.State PenDown(State.State state)
     {
-        if (state.Pen.IsUp())
-        {
-            logger.Write($"[{state.Position}] Pen down");
-        }
+        if (state.Pen.IsUp()) logger.Write($"[{state.Position}] Pen down");
 
         return innerTurtle.PenDown(state);
     }

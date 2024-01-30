@@ -26,6 +26,6 @@ public class LogicTurtleTest
         new object[] { 10, -30, new Point(9, 5) },
         new object[] { 10, -30 - 90, new Point(-5, 9) },
         new object[] { 10, -30 - 180, new Point(-9, -5) },
-        new object[] { 10, -30 - 270, new Point(5, -9) },
+        new object[] { 10, -30 - 270, new Point(5, -9) }
     ];
 }

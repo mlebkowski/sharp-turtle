@@ -1,3 +1,5 @@
 namespace Core;
 
-public interface ITurtleException { }
+public interface ITurtleException
+{
+}

@@ -6,7 +6,7 @@ namespace Core.Stateful;
 public class StatefulTurtleScenario
 {
     private readonly StatefulTurtle _turtle = StatefulTurtle.Create();
-    
+
     public StatefulTurtleScenario WhenTurtleTurnsLeft(int angle)
     {
         _turtle.TurnLeft(angle);

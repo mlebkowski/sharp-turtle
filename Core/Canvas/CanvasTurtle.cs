@@ -2,11 +2,17 @@ using Core.State;
 
 namespace Core.Canvas;
 
-public class CanvasTurtle(ICanvas canvas, ITurtle innerTurtle): ITurtle
+public class CanvasTurtle(ICanvas canvas, ITurtle innerTurtle) : ITurtle
 {
-    public State.State PenUp(State.State state) => innerTurtle.PenUp(state);
+    public State.State PenUp(State.State state)
+    {
+        return innerTurtle.PenUp(state);
+    }
 
-    public State.State PenDown(State.State state) => innerTurtle.PenDown(state);
+    public State.State PenDown(State.State state)
+    {
+        return innerTurtle.PenDown(state);
+    }
 
     public State.State MoveForward(State.State state, int distance)
     {
@@ -26,7 +32,13 @@ public class CanvasTurtle(ICanvas canvas, ITurtle innerTurtle): ITurtle
         return result;
     }
 
-    public State.State TurnLeft(State.State state, int degrees) => innerTurtle.TurnLeft(state, degrees);
+    public State.State TurnLeft(State.State state, int degrees)
+    {
+        return innerTurtle.TurnLeft(state, degrees);
+    }
 
-    public State.State TurnRight(State.State state, int degrees) => innerTurtle.TurnRight(state, degrees);
+    public State.State TurnRight(State.State state, int degrees)
+    {
+        return innerTurtle.TurnRight(state, degrees);
+    }
 }
