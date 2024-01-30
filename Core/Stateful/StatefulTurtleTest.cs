@@ -13,7 +13,7 @@ public class StatefulTurtleTest
         _scenario = new StatefulTurtleScenario();
     }
 
-    private StatefulTurtleScenario _scenario;
+    private StatefulTurtleScenario _scenario = new();
 
     [Test]
     public void Angles()

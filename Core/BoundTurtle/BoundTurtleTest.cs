@@ -12,7 +12,7 @@ public class BoundTurtleTest
         _scenario = new BoundTurtleScenario();
     }
 
-    private BoundTurtleScenario _scenario;
+    private BoundTurtleScenario _scenario = new();
 
     [Test]
     public void MovesWithinBounds()

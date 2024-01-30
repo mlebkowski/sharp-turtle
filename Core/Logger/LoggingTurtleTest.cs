@@ -12,7 +12,7 @@ public class LoggingTurtleTest
         _scenario = new LoggingTurtleScenario();
     }
 
-    private LoggingTurtleScenario _scenario;
+    private LoggingTurtleScenario _scenario = new();
 
     [Test]
     public void TurtleTurnsLeft()
